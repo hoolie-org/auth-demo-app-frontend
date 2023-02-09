@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 import Icon from "../../components/Icon";
 import config from "../../config";
 import {createNotification} from "../../helpers/notifications";
-import AuthPayload from "../../models/AuthPayload";
 import {useAppDispatch} from "../../store/hooks";
 import * as commonStore from "../../store/reducers/common";
 
@@ -14,11 +13,7 @@ export default function AuthPage() {
 
   // Redirect to Hoolie Auth Bot function
   function toHoolieAuthBot() {
-    window.open(`https://t.me/hoolieAuthBot?start=${JSON.stringify({
-      appUrl: location.origin,
-      socketId: window.socketIo.id,
-      appBackendEndpoint: `${config.API_URL}/provideAuth`
-    } as AuthPayload)}`);
+    window.open(`https://t.me/hoolieAuthBot?start=${btoa(`${config.AUTH_APP_ID}:${window.socketIo.id}`)}`);
   }
 
   // Handle socket io
