@@ -60,7 +60,7 @@ export default function IndexPage() {
             style={{
               borderRadius: "50%"
             }}
-            src={`http://127.0.0.1:3004/${user.telegramId}.jpg`}
+            src={`${config.AVATARS_URL}/${user.telegramId}.jpg`}
           />
         </div>
 

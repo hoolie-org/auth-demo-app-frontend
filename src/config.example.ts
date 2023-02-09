@@ -15,5 +15,6 @@ export default {
   },
 
   API_URL: "https://api.demo.auth.hoolie.org",
-  SOCKETS_URL: "https://sockets.api.demo.auth.hoolie.org"
+  SOCKETS_URL: "https://sockets.api.demo.auth.hoolie.org",
+  AVATARS_URL: "https://avatars.auth.hoolie.org"
 };
